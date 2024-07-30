@@ -9,7 +9,7 @@ class ReaderLogFile {
 
   constructor() {}
 
-  private processLine(line: string): void {
+  processLine(line: string): void {
     if (line.trim().length === 0) return;
 
     const event = parser.parse(line);
