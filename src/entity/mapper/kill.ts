@@ -27,11 +27,12 @@ export class Kill extends DoomEvent {
     game.total_kills++;
 
     const playerKill = game.getPlayerById(this.whoKill);
+    game.addKillMod(this.modKill);
+
     if (playerKill) playerKill.hasKill();
 
     const playerDead = game.getPlayerById(this.whoIsDead);
+    if (!playerDead) throw new Error("Invalid player number");
     playerDead.hasDie(this.whoKill);
-
-    game.addKillMod(this.modKill);
   }
 }
