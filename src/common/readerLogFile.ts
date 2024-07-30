@@ -18,7 +18,11 @@ class ReaderLogFile {
         this.currentGame = new Game(this._games.length + 1);
         this._games.push(this.currentGame);
       }
-      event.processGame(this.currentGame);
+      try {
+        event.processGame(this.currentGame);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 
