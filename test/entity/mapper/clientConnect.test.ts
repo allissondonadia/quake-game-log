@@ -9,7 +9,7 @@ describe("ClientConnect", () => {
 
   beforeEach(() => {
     game = new Game(1);
-    clientConnect = new ClientConnect(0);
+    clientConnect = new ClientConnect(2);
   });
 
   it("should return true for isTypeOf when eventType is CLIENT_CONNECT", () => {

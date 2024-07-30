@@ -8,7 +8,7 @@ describe("InitGame", () => {
 
   beforeEach(() => {
     game = new Game(1);
-    initGame = new InitGame(0);
+    initGame = new InitGame(2);
   });
 
   it("should return true for isStartGame", () => {

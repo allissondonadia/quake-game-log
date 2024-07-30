@@ -11,7 +11,10 @@ export class ClientUserinfoChanged extends DoomEvent {
 
   parse(line: string): void {
     const infos = line.split(" ");
-    this.player = parseInt(infos.shift());
+    const playerNumber = parseInt(infos.shift());
+    if (isNaN(playerNumber)) throw new Error("Invalid player number");
+
+    this.player = playerNumber;
     this.extractConfigs(infos.join(" "));
   }
 
