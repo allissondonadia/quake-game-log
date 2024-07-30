@@ -12,6 +12,11 @@ describe("Item", () => {
     item = new Item(0);
   });
 
+  it("should return true when the event type is ITEM", () => {
+    const isTypeOf = item.isTypeOf(EventType.ITEM);
+    expect(isTypeOf).toBe(true);
+  });
+
   it("should parse the line and set the player and item properties", () => {
     const line = "1 ITEM_QUAD";
     item.parse(line);

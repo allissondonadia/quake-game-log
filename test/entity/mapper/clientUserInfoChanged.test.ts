@@ -1,6 +1,7 @@
 import { Game } from "../../../src/entity/game";
 import { ClientUserinfoChanged } from "../../../src/entity/mapper/clientUserInfoChanged";
 import { Player } from "../../../src/entity/player";
+import EventType from "../../../src/entity/types/eventTypes";
 
 describe("ClientUserinfoChanged", () => {
   let game: Game;
@@ -9,6 +10,13 @@ describe("ClientUserinfoChanged", () => {
   beforeEach(() => {
     game = new Game(1);
     clientUserinfoChanged = new ClientUserinfoChanged(2);
+  });
+
+  it("should return true when the event type is CLIENT_USER_INFO_CHANGED", () => {
+    const isTypeOf = clientUserinfoChanged.isTypeOf(
+      EventType.CLIENT_USER_INFO_CHANGED
+    );
+    expect(isTypeOf).toBe(true);
   });
 
   it("should update the player's name and team if the player exists in the game", () => {
@@ -37,12 +45,18 @@ describe("ClientUserinfoChanged", () => {
   });
 
   it("should correctly parse the line and set the player and configs", () => {
-    const clientUserinfoChanged = new ClientUserinfoChanged(2);
     const line = "2 n\\John Again\\t\\1";
     clientUserinfoChanged.parse(line);
     expect(clientUserinfoChanged.player).toBe(2);
     expect(clientUserinfoChanged.configs.get("n")).toBe("John Again");
     expect(clientUserinfoChanged.configs.get("t")).toBe("1");
+  });
+
+  it("should throw an error if the player number is invalid", () => {
+    const line = "invalid n\\John Again\\t\\1";
+    expect(() => clientUserinfoChanged.parse(line)).toThrowError(
+      "Invalid player number"
+    );
   });
 
   it("should correctly parse the line with multiple configs", () => {
