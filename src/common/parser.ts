@@ -11,8 +11,12 @@ class Parser {
     const eventType = items.shift();
     const event = this.getEvent(time, eventType);
     if (event) {
-      event.parse(items.join(" "));
-      return event;
+      try {
+        event.parse(items.join(" "));
+        return event;
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 

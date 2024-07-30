@@ -11,7 +11,10 @@ export class ClientConnect extends DoomEvent {
   }
 
   parse(line: string): void {
-    this.player = parseInt(line);
+    const playerNumber = parseInt(line);
+
+    if (isNaN(playerNumber)) throw new Error("Invalid player number");
+    this.player = playerNumber;
   }
 
   processGame(game: Game): void {
