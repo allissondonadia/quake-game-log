@@ -40,7 +40,6 @@ export class Player {
 
   hasDie(playerKill: number): void {
     this.deaths++;
-    this.score--;
 
     if (playerKill === WORLD_PLAYER_ID) {
       this.score--;
