@@ -38,7 +38,7 @@ This project aims to:
 
 #### Step 3: 🏃‍♂️ Running the Project
 
-- Development Mode: `npm run start`
+- Development Mode: `npm run start:dev`
 - The project will automatic import in memory the log file `resources/qgames.log`
 
 #### Step 4: Using API
