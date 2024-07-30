@@ -3,5 +3,5 @@ import { reportController } from "./reportController";
 
 export const reportRouter: Router = express.Router();
 
-reportRouter.get("/games", reportController.getUsers);
-reportRouter.get("/deaths", reportController.getUsers);
+reportRouter.get("/games", reportController.getGames);
+reportRouter.get("/deaths", reportController.getDeaths);
