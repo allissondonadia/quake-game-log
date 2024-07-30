@@ -17,6 +17,9 @@ export class ClientUserinfoChanged extends DoomEvent {
 
   processGame(game: Game): void {
     const player = game.getPlayerById(this.player);
-    player.name = this.configs.get("n");
+    if (player) {
+      player.setName(this.configs.get("n"));
+      player.setTeam(parseInt(this.configs.get("t")));
+    }
   }
 }

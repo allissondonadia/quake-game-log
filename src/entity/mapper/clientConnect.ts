@@ -15,7 +15,10 @@ export class ClientConnect extends DoomEvent {
   }
 
   processGame(game: Game): void {
-    const player = new Player(this.player);
-    game.addPlayer(player);
+    const player = game.getPlayerById(this.player);
+    if (player) return;
+
+    const newPlayer = new Player(this.player);
+    game.addPlayer(newPlayer);
   }
 }

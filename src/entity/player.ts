@@ -6,6 +6,7 @@ export class Player {
   kills: number;
   deaths: number;
   score: number;
+  team: number;
   items: string[];
 
   constructor(id: number) {
@@ -18,6 +19,10 @@ export class Player {
 
   setName(name: string): void {
     this.name = name;
+  }
+
+  setTeam(team: number): void {
+    this.team = team;
   }
 
   addItem(item: string): void {
