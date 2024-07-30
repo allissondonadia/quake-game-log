@@ -30,6 +30,10 @@ class ReaderLogFile {
     return this._games;
   }
 
+  public setGames(games: Game[]) {
+    this._games = games;
+  }
+
   import(file: string): Promise<Game[]> {
     try {
       this._games = [];
