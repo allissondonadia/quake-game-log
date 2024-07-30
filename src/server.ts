@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/reports", reportRouter);
 
-readerLogFile.import("resources/qgames.log").then((games) => {
+readerLogFile.import("resources/qgames.log").then(() => {
   console.log("Games imported successfully.");
 });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = app;

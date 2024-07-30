@@ -16,7 +16,7 @@ This project aims to:
 
 ## 🛠️ Structure
 
-- 📁 Modular Structure: Organized by feature for easy navigation and scalability
+- 📁 Modular Structure: Organized for easy navigation and scalability
 - 💨 Faster developer with nodemon
 - 🔧 Simplified Environment Variables: Managed with dotenv
 - 🔗 Path Aliases: Cleaner code with shortcut imports
@@ -39,6 +39,7 @@ This project aims to:
 #### Step 3: 🏃‍♂️ Running the Project
 
 - Development Mode: `npm run start`
+- The project will automatic import in memory the log file `resources/qgames.log`
 
 #### Step 4: Using API
 
