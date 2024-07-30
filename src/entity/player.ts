@@ -33,7 +33,7 @@ export class Player {
     this.items = this.items.filter((i) => i !== item);
   }
 
-  hasKill(): void {
+  hasKilled(): void {
     this.kills++;
     this.score++;
   }
